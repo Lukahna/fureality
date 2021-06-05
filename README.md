@@ -15,7 +15,7 @@ Please correct any missing or incorrect details!
 |              |                **ewilli**#4882 |               |                            |
 |              | **FantaGamer (Shawn L.)**#4305 |               |                            |
 | Luk          |               **Lukahna**#9964 | Lukahna       | 2D, music, backend dev     |
-| Dave         |             **Nate Gold**#9420 |               |                            |
+| Dave         |             **Nate Gold**#9420 | davidkol      | Programming                |
 | Terra        |                 **Terra**#2846 |               |                            |
 | Bernice      |          **Tsai Ming-Li**#0524 |               |                            |
 
