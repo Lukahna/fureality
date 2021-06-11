@@ -12,7 +12,7 @@ Please correct any missing or incorrect details!
 | Nickname     | Discord Username               | GitHub        | Skills                     |
 | ------------ | ------------------------------:| ------------- | -------------------------- |
 |              |            **BDanReilly**#1361 |               |                            |
-|              |                **ewilli**#4882 |               |                            |
+| Evan         |                **ewilli**#4882 | emwjazz       | Music, Sound Design        |
 | Shawn        | **FantaGamer (Shawn L.)**#4305 | Shawnliu31    | Design, scripting, art, UI |
 | Luk          |               **Lukahna**#9964 | Lukahna       | 2D, music, backend dev     |
 | Dave         |             **Nate Gold**#9420 | davidkol      | Programming                |
