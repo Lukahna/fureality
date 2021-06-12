@@ -1,37 +1,28 @@
 fileFormatVersion: 2
-guid: 16b23d5bf7f80434c8839e3be53b84db
+guid: 0a4bc62ba16e4574cbf27f8403309a0e
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 3373769429666769028
-    second: Cat_Idle_00
+      213: -5919229049255795846
+    second: EndScreen_Title
   - first:
-      213: -574540528013701073
-    second: Cat_Idle_01
+      213: -906603368960399452
+    second: Heart_00
   - first:
-      213: 2524229311512589593
-    second: Cat_Idle_02
+      213: 7225412284046207859
+    second: Heart_01
   - first:
-      213: -5288994281674034350
-    second: Cat_Idle_03
+      213: -2086481028183503282
+    second: Heart_03
   - first:
-      213: -8715957013273313675
-    second: Teleport_00
+      213: -2858167242495339037
+    second: End_Cat_00
   - first:
-      213: -7010957187368912546
-    second: Teleport_01
+      213: 1621066638860078646
+    second: End_Cat_01
   - first:
-      213: -8452479899379717077
-    second: Teleport_02
-  - first:
-      213: -1783605054867504046
-    second: Teleport_03
-  - first:
-      213: 944448992937333553
-    second: Teleport_04
-  - first:
-      213: 6303812836818843262
-    second: Teleport_05
+      213: 3753416765233520510
+    second: End_Cat_02
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -145,211 +136,148 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Cat_Idle_00
+      name: EndScreen_Title
       rect:
         serializedVersion: 2
-        x: 7
-        y: 197
-        width: 66
-        height: 66
+        x: 35
+        y: 209
+        width: 410
+        height: 42
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4882c59db6902de20800000000000000
-      internalID: 3373769429666769028
+      spriteID: a736fe68a8caadda0800000000000000
+      internalID: -5919229049255795846
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Cat_Idle_01
+      name: Heart_00
       rect:
         serializedVersion: 2
-        x: 87
-        y: 197
-        width: 66
-        height: 66
+        x: 35
+        y: 178
+        width: 27
+        height: 24
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f209dae0f62d608f0800000000000000
-      internalID: -574540528013701073
+      spriteID: 4a761f01a091b63f0800000000000000
+      internalID: -906603368960399452
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Cat_Idle_02
+      name: Heart_01
       rect:
         serializedVersion: 2
-        x: 167
-        y: 197
-        width: 66
-        height: 66
+        x: 67
+        y: 178
+        width: 27
+        height: 24
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 91536545f2dd70320800000000000000
-      internalID: 2524229311512589593
+      spriteID: 37b6152c032d54460800000000000000
+      internalID: 7225412284046207859
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Cat_Idle_03
+      name: Heart_03
       rect:
         serializedVersion: 2
-        x: 247
-        y: 197
-        width: 66
-        height: 66
+        x: 99
+        y: 178
+        width: 27
+        height: 24
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2533fbd19b7b996b0800000000000000
-      internalID: -5288994281674034350
+      spriteID: e4ec78c3f845b03e0800000000000000
+      internalID: -2086481028183503282
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Teleport_00
+      name: End_Cat_00
       rect:
         serializedVersion: 2
-        x: 23
-        y: 116
-        width: 34
-        height: 52
+        x: 32
+        y: 49
+        width: 111
+        height: 119
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 57ef44a8643ba0780800000000000000
-      internalID: -8715957013273313675
+      spriteID: 3e558624900c558d0800000000000000
+      internalID: -2858167242495339037
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Teleport_01
+      name: End_Cat_01
       rect:
         serializedVersion: 2
-        x: 71
-        y: 116
-        width: 34
-        height: 52
+        x: 160
+        y: 49
+        width: 111
+        height: 119
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e59776f659314be90800000000000000
-      internalID: -7010957187368912546
+      spriteID: 63ecd7ee48f2f7610800000000000000
+      internalID: 1621066638860078646
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Teleport_02
+      name: End_Cat_02
       rect:
         serializedVersion: 2
-        x: 119
-        y: 116
-        width: 34
-        height: 52
+        x: 304
+        y: 50
+        width: 111
+        height: 119
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b2ca75e8052c2ba80800000000000000
-      internalID: -8452479899379717077
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Teleport_03
-      rect:
-        serializedVersion: 2
-        x: 167
-        y: 116
-        width: 34
-        height: 52
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 254080d07ac5f37e0800000000000000
-      internalID: -1783605054867504046
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Teleport_04
-      rect:
-        serializedVersion: 2
-        x: 215
-        y: 116
-        width: 34
-        height: 52
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 133518cea5b5b1d00800000000000000
-      internalID: 944448992937333553
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Teleport_05
-      rect:
-        serializedVersion: 2
-        x: 263
-        y: 116
-        width: 34
-        height: 52
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: e7672254064ab7750800000000000000
-      internalID: 6303812836818843262
+      spriteID: e7f5db959a0d61430800000000000000
+      internalID: 3753416765233520510
       vertices: []
       indices: 
       edges: []
@@ -357,7 +285,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 591f8cbe5e7755749bcf59bd29832d5f
+    spriteID: 191b635a51e11304e9596a8db95de145
     internalID: 0
     vertices: []
     indices: 
