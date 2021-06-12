@@ -9,6 +9,9 @@ public class LaserToggle_FSM : MonoBehaviour
     public Collider2D m_ColliderOfOther;
 
     [SerializeField]
+    private int m_connectedLaserID;
+
+    [SerializeField]
     private GameObject m_connectedLaserGO;
 
     #region Button Sprite
@@ -94,13 +97,13 @@ public class LaserToggle_FSM : MonoBehaviour
     {
         m_spriteRenderer.sprite = m_pressedButtonSprite;
 
-        EventsBroker.PressToggle();
+        EventsBroker.PressToggle(m_connectedLaserID);
     }
 
     public void NoWeightOnButton()
     {
         m_spriteRenderer.sprite = m_notPressedButtonSprite;
 
-        EventsBroker.StopPressToggle();
+        EventsBroker.StopPressToggle(m_connectedLaserID);
     }
 }

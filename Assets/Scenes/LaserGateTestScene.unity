@@ -570,6 +570,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c719d6d4fa4264847a6213822d84a664, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_idNumber: 1
   m_connectedLaserToggle: {fileID: 1937291021}
   m_laserCollider: {fileID: 903684341}
   m_laserGateSprite: {fileID: 903684344}
@@ -837,6 +838,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_ColliderOfOther: {fileID: 0}
+  m_connectedLaserID: 0
   m_connectedLaserGO: {fileID: 1578535353}
   m_notPressedButtonSprite: {fileID: -2413806693520163455, guid: b50644bc54413c74a8a87f9b142c7d4f,
     type: 3}
@@ -1026,6 +1028,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c719d6d4fa4264847a6213822d84a664, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_idNumber: 0
   m_connectedLaserToggle: {fileID: 1241408832}
   m_laserCollider: {fileID: 1578535354}
   m_laserGateSprite: {fileID: 1578535356}
@@ -1066,9 +1069,9 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingLayerID: 1603220759
+  m_SortingLayer: 3
+  m_SortingOrder: 10
   m_Sprite: {fileID: 7482667652216324306, guid: 48e93eef0688c4a259cb0eddcd8661f7,
     type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -1089,7 +1092,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1578535353}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2.72, y: 1.5038, z: 0}
+  m_LocalPosition: {x: -2.27, y: 1.48, z: 0}
   m_LocalScale: {x: 0.5087898, y: 2.9465864, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -1260,6 +1263,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_ColliderOfOther: {fileID: 0}
+  m_connectedLaserID: 1
   m_connectedLaserGO: {fileID: 903684340}
   m_notPressedButtonSprite: {fileID: -2413806693520163455, guid: b50644bc54413c74a8a87f9b142c7d4f,
     type: 3}

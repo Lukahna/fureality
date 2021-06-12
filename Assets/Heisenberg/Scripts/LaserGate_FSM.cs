@@ -7,6 +7,9 @@ public class LaserGate_FSM : MonoBehaviour
 {
     #region Variables
     [SerializeField]
+    private int m_idNumber;
+
+    [SerializeField]
     private LaserToggle_FSM m_connectedLaserToggle;
 
     [SerializeField]
@@ -42,14 +45,20 @@ public class LaserGate_FSM : MonoBehaviour
         TransitionToState(ActiveLaserState);
     }
 
-    public void EventsBroker_OnPressLaserToggle()
+    public void EventsBroker_OnPressLaserToggle(int id)
     {
-        DeactivateLaser();
+        if (id == this.m_idNumber)
+        {
+            DeactivateLaser();
+        }
     }
 
-    public void EventsBroker_OnStopPressLaserToggle()
+    public void EventsBroker_OnStopPressLaserToggle(int id)
     {
-        ActivateLaser();
+        if (id == this.m_idNumber)
+        {
+            ActivateLaser();
+        }
     }
 
     // Update is called once per frame
