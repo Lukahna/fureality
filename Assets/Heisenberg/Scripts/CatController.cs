@@ -13,13 +13,15 @@ public class CatController : MonoBehaviour
 {
     public PlayerState currentState;
     public float speed;
+    public GameObject AltTrigger;
+    public bool safeToSwitch; // USED IN ALT TRIGGER
     private Rigidbody2D myRigidBody;
     private Vector2 change;
     private Animator animator;
     private SpriteRenderer spriterRenderer;
     private GameObject Cat;
+    private BoxCollider2D AltTriggerBox;
     private int lastLayer;
-
     const int REALITY1 = 7;
     const int REALITY2 = 8;
     const int MERGED = 9;
@@ -95,7 +97,7 @@ public class CatController : MonoBehaviour
 
     void SwitchReality()
     {
-        if( !CheckSafeToSwitch() )
+        if( !safeToSwitch )
         {
             // Shake Screen and Make Sound
             return;
@@ -133,6 +135,7 @@ public class CatController : MonoBehaviour
         }
 
         lastLayer = currentLayer;
+        AltTrigger.layer = lastLayer;
 
         // Lerp between music channels
     }
@@ -170,14 +173,9 @@ public class CatController : MonoBehaviour
         }
     }
 
-    bool CheckSafeToSwitch()
-    {
-        return true;
-    }
-
     void MergeReality()
     {
-        if( !CheckSafeToSwitch() || Cat.layer == MERGED)
+        if( !safeToSwitch || Cat.layer == MERGED)
         {
             // Shake Screen and Make Sound
             return;
