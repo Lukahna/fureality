@@ -9,7 +9,7 @@ public enum PlayerState
     attack,
     interact
 }
-public class CatController : MonoBehaviour
+public class CatController : MonoBehaviour, IInteractable
 {
     public PlayerState currentState;
     public float speed;
