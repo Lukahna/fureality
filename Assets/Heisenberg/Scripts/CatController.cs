@@ -17,6 +17,13 @@ public class CatController : MonoBehaviour
     private Animator animator;
     private SpriteRenderer spriterRenderer;
     private GameObject Cat;
+    private int lastLayer;
+
+    const int REALITY1 = 7;
+    const int REALITY2 = 8;
+    const int MERGED = 9;
+    Color PINK = new Color(255/255f, 136/255f, 179/255f, 50/255f);
+    Color BLUE = new Color(0/255f, 203/255f, 255/255f, 50/255f);
 
     void Start()
     {
@@ -90,20 +97,59 @@ public class CatController : MonoBehaviour
             return;
         }
 
-        string LayerToSwitchTo = "Reality1";
+        int currentLayer = Cat.layer;
 
-        if( LayerMask.LayerToName( Cat.layer) == LayerToSwitchTo )
+        if( Cat.layer == MERGED )
         {
-            LayerToSwitchTo = "Reality2";
+            Cat.layer = lastLayer;
+        }
+        else if( Cat.layer == REALITY1 )
+        {
+            Cat.layer = REALITY2;
+            SetSpriteColorByLayer( REALITY1, BLUE );
+            SetSpriteColorByLayer( REALITY2, Color.white );
+        }
+        else
+        {
+            Cat.layer = REALITY1;
+            SetSpriteColorByLayer( REALITY2, PINK );
+            SetSpriteColorByLayer( REALITY1, Color.white );
         }
 
-        Cat.layer = LayerMask.NameToLayer( LayerToSwitchTo );
-        // Swap All Collision 
-        // Change Colors/alpha
+        lastLayer = currentLayer;
+
         // Lerp between music channels
     }
 
-    private bool CheckSafeToSwitch()
+    void SetSpriteColorByLayer( int Layer, Color color )
+    {
+        List<GameObject> Objects = new List<GameObject>();
+        if( Layer == MERGED )
+        {
+            Objects.AddRange( GameObject.FindGameObjectsWithTag("Reality1") );
+            Objects.AddRange( GameObject.FindGameObjectsWithTag("Reality2") );
+        }
+        else if( Layer == REALITY1 )
+        {
+            Objects.AddRange( GameObject.FindGameObjectsWithTag("Reality1") );
+        }
+        else
+        {
+            Objects.AddRange( GameObject.FindGameObjectsWithTag("Reality2") );
+        }
+
+        foreach( GameObject Object in Objects )
+        {
+            SpriteRenderer renderer = Object.GetComponent<SpriteRenderer>();
+            renderer.color = color;
+        }
+    }
+    void MakeOpaquetAndDecolorize( int Layer )
+    {
+
+    }
+
+    bool CheckSafeToSwitch()
     {
         return true;
     }

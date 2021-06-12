@@ -4,11 +4,8 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - LevelBounds
-  - FX
-  - Enemy
-  - World
-  - NoMask
+  - Reality1
+  - Reality2
   layers:
   - Default
   - TransparentFX
