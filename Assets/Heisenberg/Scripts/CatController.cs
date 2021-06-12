@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Tilemaps;
 
 public enum PlayerState
 {
@@ -22,8 +23,8 @@ public class CatController : MonoBehaviour
     const int REALITY1 = 7;
     const int REALITY2 = 8;
     const int MERGED = 9;
-    Color PINK = new Color(255/255f, 136/255f, 179/255f, 50/255f);
-    Color BLUE = new Color(0/255f, 203/255f, 255/255f, 50/255f);
+    Color PINK = new Color(255/255f, 136/255f, 179/255f, 120/255f);
+    Color BLUE = new Color(0/255f, 203/255f, 255/255f, 120/255f);
 
     void Start()
     {
@@ -32,6 +33,9 @@ public class CatController : MonoBehaviour
         myRigidBody = GetComponent<Rigidbody2D>();
         Cat = GameObject.Find("Cat");
         currentState = PlayerState.walk;
+
+        Cat.layer = REALITY2;
+        SwitchReality();
     }
 
     // Update is called once per frame
@@ -102,7 +106,19 @@ public class CatController : MonoBehaviour
         if( Cat.layer == MERGED )
         {
             Cat.layer = lastLayer;
+
+            if( Cat.layer == REALITY2 )
+            {
+                SetSpriteColorByLayer( REALITY1, BLUE );
+                SetSpriteColorByLayer( REALITY2, Color.white );
+            }
+            else
+            {
+                SetSpriteColorByLayer( REALITY2, PINK );
+                SetSpriteColorByLayer( REALITY1, Color.white );
+            }
         }
+
         else if( Cat.layer == REALITY1 )
         {
             Cat.layer = REALITY2;
@@ -141,12 +157,17 @@ public class CatController : MonoBehaviour
         foreach( GameObject Object in Objects )
         {
             SpriteRenderer renderer = Object.GetComponent<SpriteRenderer>();
-            renderer.color = color;
-        }
-    }
-    void MakeOpaquetAndDecolorize( int Layer )
-    {
+            if( renderer != null )
+            {
+                renderer.color = color;
+            }
 
+            Tilemap tilemap = Object.GetComponent<Tilemap>();
+            if( tilemap != null )
+            {
+                tilemap.color = color;
+            }
+        }
     }
 
     bool CheckSafeToSwitch()
@@ -156,6 +177,16 @@ public class CatController : MonoBehaviour
 
     void MergeReality()
     {
+        if( !CheckSafeToSwitch() || Cat.layer == MERGED)
+        {
+            // Shake Screen and Make Sound
+            return;
+        }
 
+        lastLayer = Cat.layer;
+        Cat.layer = MERGED;
+
+        SetSpriteColorByLayer( REALITY1, Color.white );
+        SetSpriteColorByLayer( REALITY2, Color.white );
     }
 }
