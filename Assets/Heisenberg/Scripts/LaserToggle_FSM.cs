@@ -6,31 +6,32 @@ using System;
 public class LaserToggle_FSM : MonoBehaviour
 {
     #region Variables
+    [HideInInspector]
     public Collider2D m_ColliderOfOther;
 
     [SerializeField]
     private int m_connectedLaserID;
 
-    [SerializeField]
-    private GameObject m_connectedLaserGO;
+    //[SerializeField]
+    //private GameObject m_connectedLaserGO;
 
     #region Button Sprite
     private SpriteRenderer m_spriteRenderer;
 
     [SerializeField]
-    private Sprite m_notPressedButtonSprite;
+    private GameObject m_notPressedButtonGO;
 
     [SerializeField]
-    private Sprite m_pressedButtonSprite;
+    private GameObject m_pressedButtonGO;
     #endregion
 
-    [SerializeField]
-    Collider2D m_laserCollider;
-    public Collider2D m_LaserCollider
-    {
-        get { return m_laserCollider; }
-        set { m_laserCollider = value; }
-    }
+    //[SerializeField]
+    //Collider2D m_laserCollider;
+    //public Collider2D m_LaserCollider
+    //{
+    //    get { return m_laserCollider; }
+    //    set { m_laserCollider = value; }
+    //}
     #endregion
 
     #region State Machine-related
@@ -55,17 +56,6 @@ public class LaserToggle_FSM : MonoBehaviour
     {
         TransitionToState(NotPressedState);
     }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
-    //private void OnCollisionEnter(Collision collision)
-    //{
-    //    currentState.OnCollisionEnterState(this);
-    //}
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -95,14 +85,14 @@ public class LaserToggle_FSM : MonoBehaviour
 
     public void WeightOnButton()
     {
-        m_spriteRenderer.sprite = m_pressedButtonSprite;
+        //m_spriteRenderer.sprite = m_pressedButtonGO;
 
         EventsBroker.PressToggle(m_connectedLaserID);
     }
 
     public void NoWeightOnButton()
     {
-        m_spriteRenderer.sprite = m_notPressedButtonSprite;
+        //m_spriteRenderer.sprite = m_notPressedButtonGO;
 
         EventsBroker.StopPressToggle(m_connectedLaserID);
     }

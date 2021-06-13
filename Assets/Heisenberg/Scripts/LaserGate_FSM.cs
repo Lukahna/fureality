@@ -12,15 +12,21 @@ public class LaserGate_FSM : MonoBehaviour
     [SerializeField]
     private LaserToggle_FSM m_connectedLaserToggle;
 
-    [SerializeField]
-    private Collider2D m_laserCollider;
-    public Collider2D m_LaserCollider {
-        get { return m_laserCollider; }
-        set { m_laserCollider = value; }
-    }
+    //[SerializeField]
+    //private Collider2D m_laserCollider;
+    //public Collider2D m_LaserCollider
+    //{
+    //    get { return m_laserCollider; }
+    //    set { m_laserCollider = value; }
+    //}
 
     [SerializeField]
-    private SpriteRenderer m_laserGateSprite;
+    private GameObject m_laserOnGameObject;
+
+    [SerializeField]
+    private GameObject m_laserOffGameObject;
+
+    //private SpriteRenderer m_laserGateSprite;
     #endregion
 
     #region State Machine-related
@@ -85,8 +91,10 @@ public class LaserGate_FSM : MonoBehaviour
         //    m_laserCollider.enabled = false;
         //    m_laserGateSprite.enabled = false;
         //}
-        m_laserCollider.enabled = false;
-        m_laserGateSprite.enabled = false;
+        //m_laserCollider.enabled = false;
+        //m_laserGateSprite.enabled = false;
+        m_laserOnGameObject.SetActive(false);
+        m_laserOffGameObject.SetActive(true);
     }
 
     public void ActivateLaser()
@@ -96,7 +104,9 @@ public class LaserGate_FSM : MonoBehaviour
         //    m_laserCollider.enabled = true;
         //    m_laserGateSprite.enabled = true;
         //}
-        m_laserCollider.enabled = true;
-        m_laserGateSprite.enabled = true;
+        //m_laserCollider.enabled = true;
+        //m_laserGateSprite.enabled = true;
+        m_laserOnGameObject.SetActive(true);
+        m_laserOffGameObject.SetActive(false);
     }
 }
