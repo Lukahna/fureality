@@ -5,117 +5,27 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 0
-    path: 
-    guid: 52360e1567e3fee418407abdfd132d73
-  - enabled: 0
-    path: 
-    guid: 888394d52616e5e42b3b54c3f2bbd3eb
-  - enabled: 0
-    path: 
-    guid: f991cbe75cb701b43baec351a60a630a
-  - enabled: 0
-    path: 
-    guid: d1174410a185495439298917edf07eea
-  - enabled: 0
-    path: 
-    guid: 84badc9c6b6e65a45be4824a7dc1a865
-  - enabled: 0
-    path: 
-    guid: e04cbbc59c9fc7f4daf2418621d84909
-  - enabled: 0
-    path: 
-    guid: 8ac9dc199fdb4d8479ee2fe42a5923fb
-  - enabled: 0
-    path: 
-    guid: 4717b9e5ed1ef29459a10adde3e7ae66
-  - enabled: 0
-    path: 
-    guid: 9cd50f8579a65684ebaac5e7cb00ecd3
-  - enabled: 0
-    path: 
-    guid: 55ddb45e2869f6e488e05e2d4e442e06
-  - enabled: 0
-    path: 
-    guid: 803747b12a3ce8b4ea9cc2d027636ac5
-  - enabled: 0
-    path: 
-    guid: 894506db76a92f54ab232e584515d7c1
-  - enabled: 0
-    path: 
-    guid: ff7b055b4f326dc49807c73993832718
-  - enabled: 0
-    path: 
-    guid: b3ddfa5326bb9324b86fff99128cda1a
-  - enabled: 0
-    path: 
-    guid: 19051fa15f79b584cb784d4c79987b20
-  - enabled: 0
-    path: 
-    guid: 95a84b442e98a37428865aa09f7e9efb
-  - enabled: 0
-    path: 
-    guid: eca176f2c9bd38a49becfb40aa180fe6
-  - enabled: 0
-    path: 
-    guid: b26c3409784ab93479d58c8ab30b02ee
-  - enabled: 0
-    path: 
-    guid: cf1765d7f98243b4185a616df4e45868
-  - enabled: 0
-    path: 
-    guid: b118ddfd651e28542947aedf2a9684f3
-  - enabled: 0
-    path: 
-    guid: ca2d5b64c544736469d5bf86d4ddd7fb
-  - enabled: 0
-    path: 
-    guid: f7c701f79b6cb6b44b4fd656eda8e473
-  - enabled: 0
-    path: 
-    guid: 7dd4341e6eb3f384daaf23d76ce07ee2
-  - enabled: 0
-    path: 
-    guid: a8bba52c06984564fbf26a7cfc873e39
-  - enabled: 0
-    path: 
-    guid: b7b14cfcf997f4d40a54d4eee5f33401
-  - enabled: 0
-    path: 
-    guid: 77c11560aca2ca24595389a0ea78a11a
-  - enabled: 0
-    path: 
-    guid: bbd1671f1789c734ebafbab88956dd66
-  - enabled: 0
-    path: 
-    guid: c3ccf26bc08e243b1aae7d13d40d2ec4
-  - enabled: 0
-    path: 
-    guid: 7a42340ee81c11b40a381cee4cacf3c9
-  - enabled: 0
-    path: 
-    guid: d89b77a7a68c1844280c6ff2e49f95b8
-  - enabled: 0
-    path: 
-    guid: dedb2bed56a01c241be42c5c5b5748ca
-  - enabled: 0
-    path: 
-    guid: 945e5b97212e8e74ebcd35bddde3970c
-  - enabled: 0
-    path: 
-    guid: 8101c376367d6e44f84e602722e5ac10
-  - enabled: 0
-    path: 
-    guid: 49d909d12efd2714f9b79de2eea67561
-  - enabled: 0
-    path: 
-    guid: 352d34cac2435634fb99618d19a3929c
   - enabled: 1
     path: Assets/Scenes/MainMenu.unity
     guid: 56251c6f4b9cb92438f3891de1f6e64d
   - enabled: 1
     path: Assets/Scenes/Level001.unity
     guid: 5e061757e39525248835047a025895d4
+  - enabled: 1
+    path: Assets/Scenes/Level002.unity
+    guid: baad8fa8594fb8d45a4accb8b3a2004f
+  - enabled: 1
+    path: Assets/Scenes/Level003.unity
+    guid: 9ec8280bc30cb764787e089678019438
+  - enabled: 1
+    path: Assets/Scenes/Level004.unity
+    guid: 73d11a674c852fd4aba2d41a6e3a489f
+  - enabled: 1
+    path: Assets/Scenes/Level005.unity
+    guid: 21bb5c95a6bee264ba498836b0a60253
+  - enabled: 1
+    path: Assets/Scenes/Level006.unity
+    guid: 1b3a01f4c0ea897408fd2f36971f4456
   - enabled: 1
     path: Assets/Scenes/EndGame.unity
     guid: f1ffd3d5137eb1849b450b1f561e56f7
