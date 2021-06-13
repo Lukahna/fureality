@@ -114,5 +114,7 @@ public class Splitter : MonoBehaviour
         float reality2XPos = this.transform.position.x;
         float reality2YPos = this.transform.position.y;
         m_cloneReality2.transform.position = new Vector2(reality2XPos - 1, reality2YPos);
+
+        StartCoroutine(kitty.SwitchToSplitMusicCo());
     }
 }
