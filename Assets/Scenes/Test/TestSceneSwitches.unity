@@ -312,7 +312,7 @@ PrefabInstance:
     - target: {fileID: 702317775955069719, guid: 5a42b3b9510f80c42baab37da49d87a9,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -2.4
+      value: 0.14
       objectReference: {fileID: 0}
     - target: {fileID: 702317775955069719, guid: 5a42b3b9510f80c42baab37da49d87a9,
         type: 3}
@@ -426,12 +426,17 @@ PrefabInstance:
     - target: {fileID: 3918060007606174236, guid: 8402699136d6bf74893e49f9e3345353,
         type: 3}
       propertyPath: m_Name
-      value: PushBox (1)
+      value: PushBox(1)-OrigPink
       objectReference: {fileID: 0}
     - target: {fileID: 3918060007606174236, guid: 8402699136d6bf74893e49f9e3345353,
         type: 3}
       propertyPath: m_Layer
-      value: 8
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3918060007606174236, guid: 8402699136d6bf74893e49f9e3345353,
+        type: 3}
+      propertyPath: m_TagString
+      value: Reality2
       objectReference: {fileID: 0}
     - target: {fileID: 7558455559173017399, guid: 8402699136d6bf74893e49f9e3345353,
         type: 3}
@@ -536,10 +541,20 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 5891046079848397533, guid: c19986492093621498669f23847b2039,
+        type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6886908285435443790, guid: c19986492093621498669f23847b2039,
         type: 3}
       propertyPath: m_Name
       value: Switch (0)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6886908285435443790, guid: c19986492093621498669f23847b2039,
+        type: 3}
+      propertyPath: m_Layer
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7308395298301022229, guid: c19986492093621498669f23847b2039,
         type: 3}
@@ -594,6 +609,11 @@ PrefabInstance:
     - target: {fileID: 7308395298301022229, guid: c19986492093621498669f23847b2039,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8103210618977759671, guid: c19986492093621498669f23847b2039,
+        type: 3}
+      propertyPath: m_Layer
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -707,12 +727,17 @@ PrefabInstance:
     - target: {fileID: 3918060007606174236, guid: 8402699136d6bf74893e49f9e3345353,
         type: 3}
       propertyPath: m_Name
-      value: PushBox
+      value: PushBox-OrigBlue
       objectReference: {fileID: 0}
     - target: {fileID: 3918060007606174236, guid: 8402699136d6bf74893e49f9e3345353,
         type: 3}
       propertyPath: m_Layer
       value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 3918060007606174236, guid: 8402699136d6bf74893e49f9e3345353,
+        type: 3}
+      propertyPath: m_TagString
+      value: Reality1
       objectReference: {fileID: 0}
     - target: {fileID: 7558455559173017399, guid: 8402699136d6bf74893e49f9e3345353,
         type: 3}

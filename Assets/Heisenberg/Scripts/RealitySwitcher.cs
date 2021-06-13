@@ -13,10 +13,12 @@ public class RealitySwitcher : MonoBehaviour
     private const int REALITY1 = 7;
     private const int REALITY2 = 8;
 
+    private CatController kitty;
+
     // Start is called before the first frame update
     void Start()
     {
-        
+        kitty = FindObjectOfType<CatController>();
     }
 
     //// Update is called once per frame
@@ -64,10 +66,39 @@ public class RealitySwitcher : MonoBehaviour
         if (realityLayerNumber == REALITY1)
         {
             pushBox.layer = REALITY2;
+            pushBox.GetComponent<Box>().originalLayer = REALITY2;
+            kitty.GetComponentInChildren<ItemAttach>().CheckAndReleaseItem(REALITY2);
+            //kitty.SwitchRealityForAllObjects();
+            //kitty.gameObject.layer = REALITY1;
+            //kitty.GetComponent<Box>().originalLayer = REALITY1;
         }
         else
         {
             pushBox.layer = REALITY1;
+            pushBox.GetComponent<Box>().originalLayer = REALITY1;
+            kitty.GetComponentInChildren<ItemAttach>().CheckAndReleaseItem(REALITY1);
+            //kitty.SwitchRealityForAllObjects();
+            //kitty.gameObject.layer = REALITY2;
+            //kitty.GetComponent<Box>().originalLayer = REALITY2;
         }
+
+        pushBox.GetComponent<RealityWarperBehavior>().SwitchReality(kitty.gameObject.layer);
+
+        float xPos = this.transform.position.x;
+        float yPos = this.transform.position.y;
+        pushBox.transform.position = new Vector2(xPos + 1, yPos);
+
+        //kitty.SwitchRealityForAllObjects();
+
+        //if (kitty.gameObject.layer == REALITY1)
+        //{
+        //    kitty.gameObject.layer = REALITY2;
+        //    //kitty.GetComponent<Box>().originalLayer = REALITY2;
+        //}
+        //else
+        //{
+        //    kitty.gameObject.layer = REALITY1;
+        //    //kitty.GetComponent<Box>().originalLayer = REALITY1;
+        //}
     }
 }
