@@ -16,7 +16,14 @@ public class RealityWarperBehavior : MonoBehaviour
     Color BLUE = new Color(0/255f, 203/255f, 255/255f, 120/255f);
     void Start()
     {
-        
+        if( gameObject.tag == "Reality1" )
+        {
+            originalLayer = REALITY1;
+        }
+        else if( gameObject.tag == "Reality2" )
+        {
+            originalLayer = REALITY2;
+        }
     }
 
     // Update is called once per frame
@@ -44,12 +51,8 @@ public class RealityWarperBehavior : MonoBehaviour
     public void MergeReality()
     {
         gameObject.layer = MERGED;
+        SetSpriteColor( gameObject, Color.white );
     }
-
-    public void SplitReality()
-    {
-        gameObject.layer = originalLayer;
-    } 
 
     void SetSpriteColor( GameObject Object, Color color )
     {

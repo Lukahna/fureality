@@ -19,8 +19,7 @@ public class CatController : MonoBehaviour
     protected const int REALITY1 = 7;
     protected const int REALITY2 = 8;
     protected const int MERGED = 9;
-    AudioSource BlueLoop;
-    AudioSource PinkLoop;
+    AudioSource[] AudioSources;
 
     RealityWarperBehavior[] AllObjects;
 
@@ -36,6 +35,7 @@ public class CatController : MonoBehaviour
         myRigidBody = GetComponent<Rigidbody2D>();
         Cat = GameObject.Find("Cat");
         itemAttachPoint = Cat.GetComponentInChildren<ItemAttach>();
+        AudioSources = GetComponents<AudioSource>();
 
         Cat.layer = REALITY2;
         SwitchRealityForAllObjects();
@@ -128,9 +128,7 @@ public class CatController : MonoBehaviour
 
         itemAttachPoint.CheckAndReleaseItem( currentLayer );
 
-        // Lerp between music channels
-        // StartCoroutine( FadeAudioSource.StartFade(BlueLoop, 2, 0) );
-        // StartCoroutine( FadeAudioSource.StartFade(PinkLoop, 2, 1) );
+        LerpMusic();
     }
 
     void MergeRealityForAllObjects()
@@ -147,6 +145,20 @@ public class CatController : MonoBehaviour
         foreach( RealityWarperBehavior Object in AllObjects )
         {
             Object.MergeReality();
+        }
+    }
+
+    void LerpMusic()
+    {
+        if( Cat.layer == REALITY2 )
+        {
+            StartCoroutine( FadeAudioSource.StartFade(AudioSources[0], 2, 0) );
+            StartCoroutine( FadeAudioSource.StartFade(AudioSources[1], 2, 1) );
+        }
+        else
+        {
+            StartCoroutine( FadeAudioSource.StartFade(AudioSources[0], 2, 1) );
+            StartCoroutine( FadeAudioSource.StartFade(AudioSources[1], 2, 0) );
         }
     }
 }
