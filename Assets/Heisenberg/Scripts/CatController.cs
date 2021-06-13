@@ -36,9 +36,6 @@ public class CatController : MonoBehaviour
         Cat = GameObject.Find("Cat");
         itemAttachPoint = Cat.GetComponentInChildren<ItemAttach>();
         AudioSources = GetComponents<AudioSource>();
-
-        Cat.layer = REALITY2;
-        SwitchRealityForAllObjects();
     }
 
     // Update is called once per frame

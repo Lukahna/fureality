@@ -14,36 +14,30 @@ public class RealityWarperBehavior : MonoBehaviour
 
     Color PINK = new Color(255/255f, 136/255f, 179/255f, 120/255f);
     Color BLUE = new Color(0/255f, 203/255f, 255/255f, 120/255f);
-    void Start()
-    {
-        if( gameObject.tag == "Reality1" )
-        {
-            originalLayer = REALITY1;
-        }
-        else if( gameObject.tag == "Reality2" )
-        {
-            originalLayer = REALITY2;
-        }
-    }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+     void Start()
+     {
+
+     }
 
     public void SwitchReality( int CatLayer )
     {
-        gameObject.layer = originalLayer;
-        if( CatLayer == originalLayer )
+        if( gameObject.tag != "Reality1" && gameObject.tag != "Reality2" )
+        {
+            return;
+        }
+
+        gameObject.layer = LayerMask.NameToLayer(gameObject.tag);
+        
+        if( CatLayer == gameObject.layer )
         {
             SetSpriteColor( gameObject, Color.white );
         }
         else
         {
-            if( originalLayer == REALITY1 )
+            if( gameObject.layer == REALITY1 )
                 SetSpriteColor( gameObject, BLUE );
-            else
+            else if( gameObject.layer == REALITY2 )
                 SetSpriteColor( gameObject, PINK );
         }
     }
