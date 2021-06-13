@@ -67,7 +67,7 @@ public class CatController : MonoBehaviour
         }
     }
 
-    void FixedUpdate() 
+    void FixedUpdate()
     {
         AnimateAndMove();
     }
@@ -227,7 +227,7 @@ public class CatController : MonoBehaviour
     {
         UI_WarningHolder.SetActive( true );
         UI_InsideWall.SetActive( true );
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(3f);
         UI_WarningHolder.SetActive( false );
         UI_InsideWall.SetActive( false );
     }
