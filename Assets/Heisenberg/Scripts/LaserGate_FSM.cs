@@ -86,13 +86,6 @@ public class LaserGate_FSM : RealityWarperBehavior
 
     public void DeactivateLaser()
     {
-        //if (this.m_laserCollider != null && this.m_laserCollider.isActiveAndEnabled == true)
-        //{
-        //    m_laserCollider.enabled = false;
-        //    m_laserGateSprite.enabled = false;
-        //}
-        //m_laserCollider.enabled = false;
-        //m_laserGateSprite.enabled = false;
         m_laserOnGameObject.SetActive(false);
         m_laserOffGameObject.SetActive(true);
     }
@@ -108,5 +101,12 @@ public class LaserGate_FSM : RealityWarperBehavior
         //m_laserGateSprite.enabled = true;
         m_laserOnGameObject.SetActive(true);
         m_laserOffGameObject.SetActive(false);
+    }
+
+    private void OnDisable()
+    {
+        EventsBroker.OnPressLaserToggle -= EventsBroker_OnPressLaserToggle;
+
+        EventsBroker.OnStopPressLaserToggle -= EventsBroker_OnStopPressLaserToggle;
     }
 }
