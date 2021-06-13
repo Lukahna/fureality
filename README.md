@@ -1,13 +1,21 @@
-# GMTK 2021 Team Project
+# Fureality
+
+A game by *The Background Cats.*
 
 This repository contains the combined effort of our team's work for the
 GMTK 2021 Game Jam, found here:
 
 > https://itch.io/jam/gmtk-2021
 
+## Submission/Download:
+
+> Official submission: https://midgear.itch.io/fureality
+
+> GitHub release page: https://github.com/Lukahna/gmtk2021/releases/tag/gmtk2021
+
 ## Team
 
-Please correct any missing or incorrect details!
+This game was developed by *The Background Cats,* who are:
 
 | Nickname     | Discord Username               | GitHub        | Skills                     |
 | ------------ | ------------------------------:| ------------- | -------------------------- |
@@ -23,22 +31,15 @@ Please correct any missing or incorrect details!
 
 > https://github.com/Lukahna/gmtk2021.git
 
-Everyone involved in this project will be granted collaborator status.
-
-**Please send Lukahna your GitHub username so I can grant you access!**
-
-Otherwise you can submit a pull request, but that will take longer.
-
 ## Unity Version
 
 This project runs on **Unity 2020.3.11f1 LTS.** YMMV with other versions.
 
 ## Build Instructions
 
-TODO
+Once you clone the repository, you should be able to simply load the project in
+Unity and build as normal.
 
-## License
-
-TBD
+## Copyright
 
 &copy; 2021 [Team Members](#Team)
