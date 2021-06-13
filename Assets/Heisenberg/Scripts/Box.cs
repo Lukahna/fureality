@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Box : MonoBehaviour, IInteractable
+public class Box : RealityWarperBehavior, IInteractable
 {
  
     // Start is called before the first frame update

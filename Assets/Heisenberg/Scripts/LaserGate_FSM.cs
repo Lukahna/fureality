@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Tilemaps;
 
-public class LaserGate_FSM : MonoBehaviour
+public class LaserGate_FSM : RealityWarperBehavior
 {
     #region Variables
     [SerializeField]
