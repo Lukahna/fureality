@@ -27,6 +27,7 @@ public class Goal : MonoBehaviour
         animator.SetBool("ReachGoal", true);
         kitty.transform.position = transform.position;
         kitty.enabled = false;
+        kitty.PlayGoalSound();
     }
 
     public void DisappearCat()

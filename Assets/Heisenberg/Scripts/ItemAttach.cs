@@ -46,12 +46,15 @@ public class ItemAttach : RealityWarperBehavior
         AttachedItemsPreviousParent = AttachedItem.transform.parent;
         AttachedItem.transform.parent = transform;
         AttachedItem.transform.localPosition = new Vector3(0,0,0);
+        
+        transform.parent.GetComponent<CatController>().PlayPushboxSound();
     }
 
     void ReleaseItem()
     {
         AttachedItem.transform.parent = AttachedItemsPreviousParent;
         AttachedItem = null;
+        transform.parent.GetComponent<CatController>().PlayDropPushboxSound();
     }
 
     public void CheckAndReleaseItem( int Layer )

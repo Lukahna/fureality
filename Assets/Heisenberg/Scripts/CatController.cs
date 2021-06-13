@@ -227,8 +227,28 @@ public class CatController : MonoBehaviour
     {
         UI_WarningHolder.SetActive( true );
         UI_InsideWall.SetActive( true );
+        PlayWarningSound();
         yield return new WaitForSeconds(3f);
         UI_WarningHolder.SetActive( false );
         UI_InsideWall.SetActive( false );
+    }
+
+    public void PlayPushboxSound()
+    {
+        AudioSources[4].Play();
+    }
+
+    public void PlayDropPushboxSound()
+    {
+        AudioSources[6].Play();
+    }
+    public void PlayGoalSound()
+    {
+        AudioSources[5].Play();
+    }
+
+    public void PlayWarningSound()
+    {
+        AudioSources[7].Play();
     }
 }
