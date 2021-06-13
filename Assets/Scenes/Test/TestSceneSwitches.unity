@@ -175,7 +175,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2772a993e64a362449331e2efdc19afa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentState: 0
   speed: 4
   AltTrigger: {fileID: 0}
   safeToSwitch: 0
@@ -313,7 +312,7 @@ PrefabInstance:
     - target: {fileID: 702317775955069719, guid: 5a42b3b9510f80c42baab37da49d87a9,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -2.4
+      value: 0.14
       objectReference: {fileID: 0}
     - target: {fileID: 702317775955069719, guid: 5a42b3b9510f80c42baab37da49d87a9,
         type: 3}
@@ -427,11 +426,21 @@ PrefabInstance:
     - target: {fileID: 3918060007606174236, guid: 8402699136d6bf74893e49f9e3345353,
         type: 3}
       propertyPath: m_Name
-      value: PushBox (1)
+      value: PushBox(1)-OrigPink
       objectReference: {fileID: 0}
     - target: {fileID: 3918060007606174236, guid: 8402699136d6bf74893e49f9e3345353,
         type: 3}
       propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3918060007606174236, guid: 8402699136d6bf74893e49f9e3345353,
+        type: 3}
+      propertyPath: m_TagString
+      value: Reality2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7558455559173017399, guid: 8402699136d6bf74893e49f9e3345353,
+        type: 3}
+      propertyPath: originalLayer
       value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 8502735123939386122, guid: 8402699136d6bf74893e49f9e3345353,
@@ -442,12 +451,12 @@ PrefabInstance:
     - target: {fileID: 8502735123939386122, guid: 8402699136d6bf74893e49f9e3345353,
         type: 3}
       propertyPath: m_Color.g
-      value: 0.68671155
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8502735123939386122, guid: 8402699136d6bf74893e49f9e3345353,
         type: 3}
       propertyPath: m_Color.r
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8402699136d6bf74893e49f9e3345353, type: 3}
@@ -659,22 +668,32 @@ PrefabInstance:
     - target: {fileID: 3918060007606174236, guid: 8402699136d6bf74893e49f9e3345353,
         type: 3}
       propertyPath: m_Name
-      value: PushBox
+      value: PushBox-OrigBlue
       objectReference: {fileID: 0}
     - target: {fileID: 3918060007606174236, guid: 8402699136d6bf74893e49f9e3345353,
         type: 3}
       propertyPath: m_Layer
       value: 7
       objectReference: {fileID: 0}
+    - target: {fileID: 3918060007606174236, guid: 8402699136d6bf74893e49f9e3345353,
+        type: 3}
+      propertyPath: m_TagString
+      value: Reality1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7558455559173017399, guid: 8402699136d6bf74893e49f9e3345353,
+        type: 3}
+      propertyPath: originalLayer
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 8502735123939386122, guid: 8402699136d6bf74893e49f9e3345353,
         type: 3}
       propertyPath: m_Color.b
-      value: 0.74066114
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8502735123939386122, guid: 8402699136d6bf74893e49f9e3345353,
         type: 3}
       propertyPath: m_Color.g
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8502735123939386122, guid: 8402699136d6bf74893e49f9e3345353,
         type: 3}
