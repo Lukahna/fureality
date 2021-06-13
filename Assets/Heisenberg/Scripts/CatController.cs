@@ -186,6 +186,43 @@ public class CatController : MonoBehaviour
         }
     }
 
+    public IEnumerator SwitchToSplitMusicCo()
+    {
+        AudioSources[0].volume = 0;
+        AudioSources[1].volume = 0;
+        AudioSources[2].volume = 0;
+        AudioSources[3].volume = 1;
+
+        yield return new WaitForSeconds(3f);
+
+        float currentTime = 0;
+        float duration = 2f;
+        int reality = 0;
+
+        if( Cat.layer == REALITY1 )
+        {
+            reality = 0;
+        }
+        else if( Cat.layer == REALITY2 )
+        {
+            reality = 1;
+        }
+        else
+        {
+            reality = 2;
+        }
+
+        while (currentTime < duration)
+        {
+            currentTime += Time.deltaTime;
+            AudioSources[3].volume = Mathf.Lerp(1, 0, currentTime / duration);
+            AudioSources[reality].volume = Mathf.Lerp(0, 1, currentTime / duration);
+            yield return null;
+        }
+
+        //SwitchMusic();
+    }
+
     IEnumerator ShowWarningsCo()
     {
         UI_WarningHolder.SetActive( true );
