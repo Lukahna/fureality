@@ -20,6 +20,17 @@ public class Goal_Final : MonoBehaviour
     {
     }
 
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        kitty.transform.position = transform.position;
+        kitty.enabled = false;
+    }
+
+    public void DisappearCat()
+    {
+        kitty.GetComponent<SpriteRenderer>().color = Color.clear;
+    }
+
     // Load the next level after a delay
     public void LoadNextLevel()
     {
