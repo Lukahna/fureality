@@ -21,7 +21,8 @@ public class Goal_Final : MonoBehaviour
     // Load the next level after a delay
     public void LoadNextLevel()
     {
-        StartCoroutine(NextLevelCo());
+        //StartCoroutine(NextLevelCo());
+        SceneManager.LoadScene(SceneToLoad);
     }
 
     IEnumerator NextLevelCo() {
