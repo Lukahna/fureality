@@ -7,17 +7,26 @@ public class LaserGate_FSM : MonoBehaviour
 {
     #region Variables
     [SerializeField]
-    private LaserToggle_FSM m_connectedLaserToggle;
+    private int m_idNumber;
+
+    //[SerializeField]
+    //private LaserToggle_FSM m_connectedLaserToggle;
+
+    //[SerializeField]
+    //private Collider2D m_laserCollider;
+    //public Collider2D m_LaserCollider
+    //{
+    //    get { return m_laserCollider; }
+    //    set { m_laserCollider = value; }
+    //}
 
     [SerializeField]
-    private Collider2D m_laserCollider;
-    public Collider2D m_LaserCollider {
-        get { return m_laserCollider; }
-        set { m_laserCollider = value; }
-    }
+    private GameObject m_laserOnGameObject;
 
     [SerializeField]
-    private SpriteRenderer m_laserGateSprite;
+    private GameObject m_laserOffGameObject;
+
+    //private SpriteRenderer m_laserGateSprite;
     #endregion
 
     #region State Machine-related
@@ -42,14 +51,20 @@ public class LaserGate_FSM : MonoBehaviour
         TransitionToState(ActiveLaserState);
     }
 
-    public void EventsBroker_OnPressLaserToggle()
+    public void EventsBroker_OnPressLaserToggle(int id)
     {
-        DeactivateLaser();
+        if (id == this.m_idNumber)
+        {
+            DeactivateLaser();
+        }
     }
 
-    public void EventsBroker_OnStopPressLaserToggle()
+    public void EventsBroker_OnStopPressLaserToggle(int id)
     {
-        ActivateLaser();
+        if (id == this.m_idNumber)
+        {
+            ActivateLaser();
+        }
     }
 
     // Update is called once per frame
@@ -76,8 +91,10 @@ public class LaserGate_FSM : MonoBehaviour
         //    m_laserCollider.enabled = false;
         //    m_laserGateSprite.enabled = false;
         //}
-        m_laserCollider.enabled = false;
-        m_laserGateSprite.enabled = false;
+        //m_laserCollider.enabled = false;
+        //m_laserGateSprite.enabled = false;
+        m_laserOnGameObject.SetActive(false);
+        m_laserOffGameObject.SetActive(true);
     }
 
     public void ActivateLaser()
@@ -87,7 +104,9 @@ public class LaserGate_FSM : MonoBehaviour
         //    m_laserCollider.enabled = true;
         //    m_laserGateSprite.enabled = true;
         //}
-        m_laserCollider.enabled = true;
-        m_laserGateSprite.enabled = true;
+        //m_laserCollider.enabled = true;
+        //m_laserGateSprite.enabled = true;
+        m_laserOnGameObject.SetActive(true);
+        m_laserOffGameObject.SetActive(false);
     }
 }

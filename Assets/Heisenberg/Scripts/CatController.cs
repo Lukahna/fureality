@@ -3,15 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Tilemaps;
 
-public enum PlayerState
+public class CatController : MonoBehaviour
 {
-    walk,
-    attack,
-    interact
-}
-public class CatController : MonoBehaviour, IInteractable
-{
-    public PlayerState currentState;
     public float speed;
     public GameObject AltTrigger;
     public bool safeToSwitch; // USED IN ALT TRIGGER
@@ -22,6 +15,7 @@ public class CatController : MonoBehaviour, IInteractable
     private GameObject Cat;
     private BoxCollider2D AltTriggerBox;
     private int lastLayer;
+    private ItemAttach itemAttachPoint;
     const int REALITY1 = 7;
     const int REALITY2 = 8;
     const int MERGED = 9;
@@ -34,8 +28,7 @@ public class CatController : MonoBehaviour, IInteractable
         spriterRenderer = GetComponent<SpriteRenderer>();
         myRigidBody = GetComponent<Rigidbody2D>();
         Cat = GameObject.Find("Cat");
-        currentState = PlayerState.walk;
-
+        itemAttachPoint = Cat.GetComponentInChildren<ItemAttach>();
         Cat.layer = REALITY2;
         SwitchReality();
     }
@@ -60,10 +53,7 @@ public class CatController : MonoBehaviour, IInteractable
 
     void FixedUpdate() 
     {
-        if( currentState == PlayerState.walk )
-        {
-            AnimateAndMove();
-        }
+        AnimateAndMove();
     }
 
     void MoveCharacter()
@@ -120,7 +110,6 @@ public class CatController : MonoBehaviour, IInteractable
                 SetSpriteColorByLayer( REALITY1, Color.white );
             }
         }
-
         else if( Cat.layer == REALITY1 )
         {
             Cat.layer = REALITY2;
@@ -134,8 +123,12 @@ public class CatController : MonoBehaviour, IInteractable
             SetSpriteColorByLayer( REALITY1, Color.white );
         }
 
+        itemAttachPoint.UpdateLayer( Cat.layer );
+
         lastLayer = currentLayer;
         AltTrigger.layer = lastLayer;
+
+        itemAttachPoint.CheckAndReleaseItem( currentLayer );
 
         // Lerp between music channels
     }

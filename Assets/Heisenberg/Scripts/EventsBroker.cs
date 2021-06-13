@@ -2,21 +2,21 @@ using System;
 
 public class EventsBroker
 {
-    public static event Action OnPressLaserToggle;
-    public static void PressToggle()
+    public static event Action<int> OnPressLaserToggle;
+    public static void PressToggle(int id)
     {
         if (OnPressLaserToggle != null)
         {
-            OnPressLaserToggle();
+            OnPressLaserToggle(id);
         }
     }
 
-    public static event Action OnStopPressLaserToggle;
-    public static void StopPressToggle()
+    public static event Action<int> OnStopPressLaserToggle;
+    public static void StopPressToggle(int id)
     {
         if (OnStopPressLaserToggle != null)
         {
-            OnStopPressLaserToggle();
+            OnStopPressLaserToggle(id);
         }
     }
 }

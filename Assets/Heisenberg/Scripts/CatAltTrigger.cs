@@ -15,10 +15,16 @@ public class CatAltTrigger : MonoBehaviour
 
     private void OnTriggerExit2D(Collider2D other) 
     {
-        parent.safeToSwitch = true;
+        if( other.CompareTag("Reality1") || other.CompareTag("Reality2") )
+        {
+            parent.safeToSwitch = true;
+        }
     }
-    private void OnTriggerStay2D(Collider2D other) 
+    private void OnTriggerEnter2D(Collider2D other) 
     {
-        parent.safeToSwitch = false;
+        if( other.CompareTag("Reality1") || other.CompareTag("Reality2") )
+        {
+            parent.safeToSwitch = false;
+        }
     }
 }
