@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Tilemaps;
 
-public class CatController : RealityWarperBehavior
+public class CatController : MonoBehaviour
 {
     public float speed;
     public GameObject AltTrigger;
@@ -16,9 +16,9 @@ public class CatController : RealityWarperBehavior
     private BoxCollider2D AltTriggerBox;
     private int lastLayer;
     private ItemAttach itemAttachPoint;
-
-    Color PINK = new Color(255/255f, 136/255f, 179/255f, 120/255f);
-    Color BLUE = new Color(0/255f, 203/255f, 255/255f, 120/255f);
+    protected const int REALITY1 = 7;
+    protected const int REALITY2 = 8;
+    protected const int MERGED = 9;
     AudioSource BlueLoop;
     AudioSource PinkLoop;
 
@@ -38,7 +38,7 @@ public class CatController : RealityWarperBehavior
         itemAttachPoint = Cat.GetComponentInChildren<ItemAttach>();
 
         Cat.layer = REALITY2;
-        SwitchReality();
+        SwitchRealityForAllObjects();
     }
 
     // Update is called once per frame
@@ -50,7 +50,7 @@ public class CatController : RealityWarperBehavior
 
         if( Input.GetButtonDown("Switch") )
         {
-            SwitchReality();
+            SwitchRealityForAllObjects();
         }
 
         if( Input.GetButtonDown("Merge") )
@@ -93,7 +93,7 @@ public class CatController : RealityWarperBehavior
         }
     }
 
-    void SwitchReality()
+    void SwitchRealityForAllObjects()
     {
         if( !safeToSwitch )
         {
@@ -106,29 +106,19 @@ public class CatController : RealityWarperBehavior
         if( Cat.layer == MERGED )
         {
             Cat.layer = lastLayer;
-
-            if( Cat.layer == REALITY2 )
-            {
-                SetSpriteColorByLayer( REALITY1, BLUE );
-                SetSpriteColorByLayer( REALITY2, Color.white );
-            }
-            else
-            {
-                SetSpriteColorByLayer( REALITY2, PINK );
-                SetSpriteColorByLayer( REALITY1, Color.white );
-            }
         }
         else if( Cat.layer == REALITY1 )
         {
             Cat.layer = REALITY2;
-            SetSpriteColorByLayer( REALITY1, BLUE );
-            SetSpriteColorByLayer( REALITY2, Color.white );
         }
         else
         {
             Cat.layer = REALITY1;
-            SetSpriteColorByLayer( REALITY2, PINK );
-            SetSpriteColorByLayer( REALITY1, Color.white );
+        }
+
+        foreach( RealityWarperBehavior Object in AllObjects )
+        {
+            Object.SwitchReality( Cat.layer );
         }
 
         itemAttachPoint.UpdateLayer( Cat.layer );
@@ -141,39 +131,6 @@ public class CatController : RealityWarperBehavior
         // Lerp between music channels
         // StartCoroutine( FadeAudioSource.StartFade(BlueLoop, 2, 0) );
         // StartCoroutine( FadeAudioSource.StartFade(PinkLoop, 2, 1) );
-    }
-
-    void SetSpriteColorByLayer( int Layer, Color color )
-    {
-        List<GameObject> Objects = new List<GameObject>();
-        if( Layer == MERGED )
-        {
-            Objects.AddRange( GameObject.FindGameObjectsWithTag("Reality1") );
-            Objects.AddRange( GameObject.FindGameObjectsWithTag("Reality2") );
-        }
-        else if( Layer == REALITY1 )
-        {
-            Objects.AddRange( GameObject.FindGameObjectsWithTag("Reality1") );
-        }
-        else
-        {
-            Objects.AddRange( GameObject.FindGameObjectsWithTag("Reality2") );
-        }
-
-        foreach( GameObject Object in Objects )
-        {
-            SpriteRenderer renderer = Object.GetComponent<SpriteRenderer>();
-            if( renderer != null )
-            {
-                renderer.color = color;
-            }
-
-            Tilemap tilemap = Object.GetComponent<Tilemap>();
-            if( tilemap != null )
-            {
-                tilemap.color = color;
-            }
-        }
     }
 
     void MergeRealityForAllObjects()
