@@ -71,13 +71,13 @@ public class RealitySwitcher : MonoBehaviour
             else
                 pushBox.tag = "Reality2";
 
-            kitty.GetComponentInChildren<ItemAttach>().CheckAndReleaseItem( MERGED );
+            kitty.GetComponentInChildren<ItemAttach>().CheckAndReleaseItem( REALITY1 );
         }
         else if (realityLayerNumber == REALITY1)
         {
             pushBox.layer = REALITY2;
             pushBox.tag = "Reality2";
-            kitty.GetComponentInChildren<ItemAttach>().CheckAndReleaseItem(REALITY2);
+            kitty.GetComponentInChildren<ItemAttach>().CheckAndReleaseItem(kitty.gameObject.layer);
             pushBox.GetComponent<RealityWarperBehavior>().SwitchReality(kitty.gameObject.layer);
             //kitty.SwitchRealityForAllObjects();
             //kitty.gameObject.layer = REALITY1;
@@ -87,7 +87,7 @@ public class RealitySwitcher : MonoBehaviour
         {
             pushBox.layer = REALITY1;
             pushBox.tag = "Reality1";
-            kitty.GetComponentInChildren<ItemAttach>().CheckAndReleaseItem(REALITY1);
+            kitty.GetComponentInChildren<ItemAttach>().CheckAndReleaseItem(kitty.gameObject.layer);
             pushBox.GetComponent<RealityWarperBehavior>().SwitchReality(kitty.gameObject.layer);
             //kitty.SwitchRealityForAllObjects();
             //kitty.gameObject.layer = REALITY2;

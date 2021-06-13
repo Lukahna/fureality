@@ -56,7 +56,7 @@ public class ItemAttach : RealityWarperBehavior
 
     public void CheckAndReleaseItem( int Layer )
     {
-        if( AttachedItem != null && AttachedItem.layer == Layer )
+        if( AttachedItem != null && AttachedItem.layer != Layer )
             ReleaseItem();
     }
 

@@ -134,7 +134,7 @@ public class CatController : MonoBehaviour
         lastLayer = currentLayer;
         AltTrigger.layer = lastLayer;
 
-        itemAttachPoint.CheckAndReleaseItem( currentLayer );
+        itemAttachPoint.CheckAndReleaseItem( Cat.layer );
 
         SwitchMusic();
     }
@@ -146,7 +146,7 @@ public class CatController : MonoBehaviour
             StartCoroutine(ShowWarningsCo());
             return;
         }
-        
+
         if( Cat.layer == MERGED )
             return;
 
