@@ -3,15 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Tilemaps;
 
-public enum PlayerState
+public class CatController : RealityWarperBehavior
 {
-    walk,
-    attack,
-    interact
-}
-public class CatController : MonoBehaviour, IInteractable
-{
-    public PlayerState currentState;
     public float speed;
     public GameObject AltTrigger;
     public bool safeToSwitch; // USED IN ALT TRIGGER
@@ -22,11 +15,19 @@ public class CatController : MonoBehaviour, IInteractable
     private GameObject Cat;
     private BoxCollider2D AltTriggerBox;
     private int lastLayer;
-    const int REALITY1 = 7;
-    const int REALITY2 = 8;
-    const int MERGED = 9;
+    private ItemAttach itemAttachPoint;
+
     Color PINK = new Color(255/255f, 136/255f, 179/255f, 120/255f);
     Color BLUE = new Color(0/255f, 203/255f, 255/255f, 120/255f);
+    AudioSource BlueLoop;
+    AudioSource PinkLoop;
+
+    RealityWarperBehavior[] AllObjects;
+
+    void Awake()
+    {
+        AllObjects = UnityEngine.Object.FindObjectsOfType<RealityWarperBehavior>();
+    }
 
     void Start()
     {
@@ -34,7 +35,7 @@ public class CatController : MonoBehaviour, IInteractable
         spriterRenderer = GetComponent<SpriteRenderer>();
         myRigidBody = GetComponent<Rigidbody2D>();
         Cat = GameObject.Find("Cat");
-        currentState = PlayerState.walk;
+        itemAttachPoint = Cat.GetComponentInChildren<ItemAttach>();
 
         Cat.layer = REALITY2;
         SwitchReality();
@@ -54,16 +55,13 @@ public class CatController : MonoBehaviour, IInteractable
 
         if( Input.GetButtonDown("Merge") )
         {
-            MergeReality();
+            MergeRealityForAllObjects();
         }
     }
 
     void FixedUpdate() 
     {
-        if( currentState == PlayerState.walk )
-        {
-            AnimateAndMove();
-        }
+        AnimateAndMove();
     }
 
     void MoveCharacter()
@@ -120,7 +118,6 @@ public class CatController : MonoBehaviour, IInteractable
                 SetSpriteColorByLayer( REALITY1, Color.white );
             }
         }
-
         else if( Cat.layer == REALITY1 )
         {
             Cat.layer = REALITY2;
@@ -134,10 +131,16 @@ public class CatController : MonoBehaviour, IInteractable
             SetSpriteColorByLayer( REALITY1, Color.white );
         }
 
+        itemAttachPoint.UpdateLayer( Cat.layer );
+
         lastLayer = currentLayer;
         AltTrigger.layer = lastLayer;
 
+        itemAttachPoint.CheckAndReleaseItem( currentLayer );
+
         // Lerp between music channels
+        // StartCoroutine( FadeAudioSource.StartFade(BlueLoop, 2, 0) );
+        // StartCoroutine( FadeAudioSource.StartFade(PinkLoop, 2, 1) );
     }
 
     void SetSpriteColorByLayer( int Layer, Color color )
@@ -173,7 +176,7 @@ public class CatController : MonoBehaviour, IInteractable
         }
     }
 
-    void MergeReality()
+    void MergeRealityForAllObjects()
     {
         if( !safeToSwitch || Cat.layer == MERGED)
         {
@@ -184,7 +187,9 @@ public class CatController : MonoBehaviour, IInteractable
         lastLayer = Cat.layer;
         Cat.layer = MERGED;
 
-        SetSpriteColorByLayer( REALITY1, Color.white );
-        SetSpriteColorByLayer( REALITY2, Color.white );
+        foreach( RealityWarperBehavior Object in AllObjects )
+        {
+            Object.MergeReality();
+        }
     }
 }
