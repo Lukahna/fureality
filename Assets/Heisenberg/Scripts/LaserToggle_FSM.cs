@@ -9,6 +9,9 @@ public class LaserToggle_FSM : RealityWarperBehavior
     [HideInInspector]
     public Collider2D m_ColliderOfOther;
 
+    [HideInInspector]
+    public CatController kitty;
+
     [SerializeField]
     private int m_connectedLaserID;
 
@@ -37,6 +40,8 @@ public class LaserToggle_FSM : RealityWarperBehavior
     #region State Machine-related
     private LaserToggle_BaseState currentState;
 
+    bool sameLayer;
+
     public LaserToggle_BaseState CurrentState
     {
         get { return currentState; }
@@ -49,6 +54,8 @@ public class LaserToggle_FSM : RealityWarperBehavior
     private void Awake()
     {
         m_spriteRenderer = GetComponent<SpriteRenderer>();
+
+        kitty = FindObjectOfType<CatController>();
     }
 
     // Start is called before the first frame update
@@ -61,7 +68,9 @@ public class LaserToggle_FSM : RealityWarperBehavior
     {
         m_ColliderOfOther = collision;
 
-        if (collision.GetComponent<IInteractable>() != null)
+        sameLayer = (kitty.gameObject.layer == collision.gameObject.layer);
+
+        if (collision.GetComponent<IInteractable>() != null && sameLayer)
         {
             currentState.OnTriggerEnterState(this);
         }
@@ -71,7 +80,9 @@ public class LaserToggle_FSM : RealityWarperBehavior
     {
         m_ColliderOfOther = collision;
 
-        if (collision.GetComponent<IInteractable>() != null)
+        sameLayer = (kitty.gameObject.layer == collision.gameObject.layer);
+
+        if (collision.GetComponent<IInteractable>() != null && sameLayer)
         {
             currentState.OnTriggerExitState(this);
         }
