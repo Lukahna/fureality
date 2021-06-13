@@ -7,6 +7,7 @@ public class MenuManager : MonoBehaviour
 {
     //Get the Pause Menu
     [SerializeField] private GameObject thisPauseMenu = null;
+    [SerializeField] private GameObject thisCredits = null;
 
     private void Update()
     {
@@ -52,6 +53,18 @@ public class MenuManager : MonoBehaviour
     public void MainMenu()
     {
         SceneManager.LoadScene("MainMenu");
+    }
+
+    //Open Credits
+    public void OpenCredits()
+    {
+        thisCredits.SetActive(true);
+    }
+
+    //Close Credits
+    public void CloseCredits()
+    {
+        thisCredits.SetActive(false);
     }
     
 }
