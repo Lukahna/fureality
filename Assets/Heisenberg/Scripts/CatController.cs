@@ -25,11 +25,12 @@ public class CatController : MonoBehaviour
     GameObject UI_BoxSplitWarning;
 
 
-    RealityWarperBehavior[] AllObjects;
+    [HideInInspector]
+    public List<RealityWarperBehavior> AllObjects = new List<RealityWarperBehavior>();
 
     void Awake()
     {
-        AllObjects = UnityEngine.Object.FindObjectsOfType<RealityWarperBehavior>();
+        AllObjects.AddRange(UnityEngine.Object.FindObjectsOfType<RealityWarperBehavior>() );
     }
 
     void Start()
