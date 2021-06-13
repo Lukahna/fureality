@@ -6,11 +6,13 @@ using UnityEngine.SceneManagement;
 public class Goal_Final : MonoBehaviour
 {
     public string SceneToLoad;
+    private CatController kitty;
     [SerializeField] private float _sceneDelay = 0.5f;
 
     // Start is called before the first frame update
     void Start()
     {
+        kitty = FindObjectOfType<CatController>();
     }
 
     // Update is called once per frame
