@@ -125,7 +125,7 @@ public class CatController : MonoBehaviour
 
         itemAttachPoint.CheckAndReleaseItem( currentLayer );
 
-        LerpMusic();
+        SwitchMusic();
     }
 
     void MergeRealityForAllObjects()
@@ -143,19 +143,32 @@ public class CatController : MonoBehaviour
         {
             Object.MergeReality();
         }
+
+        SwitchMusic();
     }
 
-    void LerpMusic()
+    void SwitchMusic()
     {
-        if( Cat.layer == REALITY2 )
+        if( Cat.layer == REALITY1 )
         {
-            StartCoroutine( FadeAudioSource.StartFade(AudioSources[0], 2, 0) );
-            StartCoroutine( FadeAudioSource.StartFade(AudioSources[1], 2, 1) );
+            AudioSources[0].volume = 1;
+            AudioSources[1].volume = 0;
+            AudioSources[2].volume = 0;
+            AudioSources[3].volume = 0;
         }
-        else
+        else if( Cat.layer == REALITY2 )
         {
-            StartCoroutine( FadeAudioSource.StartFade(AudioSources[0], 2, 1) );
-            StartCoroutine( FadeAudioSource.StartFade(AudioSources[1], 2, 0) );
+            AudioSources[0].volume = 0;
+            AudioSources[1].volume = 1;
+            AudioSources[2].volume = 0;
+            AudioSources[3].volume = 0;
+        }
+        else if( Cat.layer == MERGED )
+        {
+            AudioSources[0].volume = 0;
+            AudioSources[1].volume = 0;
+            AudioSources[2].volume = 1;
+            AudioSources[3].volume = 0;
         }
     }
 }
