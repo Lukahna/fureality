@@ -17,7 +17,7 @@ Please correct any missing or incorrect details!
 | Luk          |               **Lukahna**#9964 | Lukahna       | 2D, music, backend dev     |
 | Dave         |             **Nate Gold**#9420 | davidkol      | Programming                |
 | Terra        |                 **Terra**#2846 |               |                            |
-| Bernice      |          **Tsai Ming-Li**#0524 |               |                            |
+| Bernice      |          **Tsai Ming-Li**#0524 | BerniceChua   | Programming                |
 
 ## Repository
 
