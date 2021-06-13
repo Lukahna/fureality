@@ -10626,9 +10626,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1480081736}
+  - component: {fileID: 1480081737}
   m_Layer: 7
   m_Name: Reality1
-  m_TagString: Untagged
+  m_TagString: Reality1
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -10651,6 +10652,18 @@ Transform:
   m_Father: {fileID: 2125969936}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1480081737
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1480081735}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3527448eec1cae34b9406eecd7c17ac0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1676589887
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -11140,9 +11153,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2032251156}
+  - component: {fileID: 2032251157}
   m_Layer: 8
   m_Name: Reality2
-  m_TagString: Untagged
+  m_TagString: Reality2
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -11163,6 +11177,18 @@ Transform:
   m_Father: {fileID: 2125969936}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2032251157
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2032251155}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3527448eec1cae34b9406eecd7c17ac0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &2063017329
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -11319,12 +11345,12 @@ PrefabInstance:
     - target: {fileID: 702317775955069719, guid: 5a42b3b9510f80c42baab37da49d87a9,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -7.47
+      value: -7.4
       objectReference: {fileID: 0}
     - target: {fileID: 702317775955069719, guid: 5a42b3b9510f80c42baab37da49d87a9,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 2.73
+      value: 3.51
       objectReference: {fileID: 0}
     - target: {fileID: 702317775955069719, guid: 5a42b3b9510f80c42baab37da49d87a9,
         type: 3}
