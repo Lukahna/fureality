@@ -190,6 +190,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Laser Vertical (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 8654066349589014968, guid: 1855e1a903f061d4c840fb6334be7257,
+        type: 3}
+      propertyPath: m_idNumber
+      value: 2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1855e1a903f061d4c840fb6334be7257, type: 3}
 --- !u!4 &79566117 stripped
@@ -264,6 +269,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Laser Vertical (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8654066349589014968, guid: 1855e1a903f061d4c840fb6334be7257,
+        type: 3}
+      propertyPath: m_idNumber
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1855e1a903f061d4c840fb6334be7257, type: 3}
@@ -9858,7 +9868,7 @@ Sprite:
         format: 0
         dimension: 0
       m_DataSize: 80
-      _typelessdata: 000000bf0000003f000000000000003f0000003f00000000000000bf000000bf000000000000003f000000bf000000000000000000000000000000000000000000000000000000000000000000000000
+      _typelessdata: 000000bf0000003f000000000000003f0000003f00000000000000bf000000bf000000000000003f000000bf00000000000000000000803f0000803f0000803f00000000000000000000803f00000000
     m_Bindpose: []
     textureRect:
       serializedVersion: 2
@@ -11029,6 +11039,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7317866276444324827, guid: ded1cb107d2626f448c9b66a8bfa7cea,
+        type: 3}
+      propertyPath: m_connectedLaserID
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 7706610322868060492, guid: ded1cb107d2626f448c9b66a8bfa7cea,
         type: 3}
       propertyPath: m_Name
@@ -11123,6 +11138,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Laser Vertical (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8654066349589014968, guid: 1855e1a903f061d4c840fb6334be7257,
+        type: 3}
+      propertyPath: m_idNumber
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1855e1a903f061d4c840fb6334be7257, type: 3}
@@ -11598,6 +11618,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7317866276444324827, guid: ded1cb107d2626f448c9b66a8bfa7cea,
+        type: 3}
+      propertyPath: m_connectedLaserID
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7706610322868060492, guid: ded1cb107d2626f448c9b66a8bfa7cea,
         type: 3}
       propertyPath: m_Name
@@ -11977,6 +12002,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7317866276444324827, guid: ded1cb107d2626f448c9b66a8bfa7cea,
+        type: 3}
+      propertyPath: m_connectedLaserID
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 7706610322868060492, guid: ded1cb107d2626f448c9b66a8bfa7cea,
         type: 3}

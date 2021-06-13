@@ -9914,6 +9914,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2005174223}
     m_Modifications:
+    - target: {fileID: -5644632724725211188, guid: b7a114056ad24e242bb2d1c45c045c59,
+        type: 3}
+      propertyPath: m_idNumber
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1804747451001970544, guid: b7a114056ad24e242bb2d1c45c045c59,
         type: 3}
       propertyPath: m_Tiles.Array.size
@@ -11491,6 +11496,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7317866276444324827, guid: ded1cb107d2626f448c9b66a8bfa7cea,
+        type: 3}
+      propertyPath: m_connectedLaserID
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7706610322868060492, guid: ded1cb107d2626f448c9b66a8bfa7cea,
         type: 3}
