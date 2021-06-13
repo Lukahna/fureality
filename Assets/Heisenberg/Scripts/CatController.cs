@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Tilemaps;
 
-public class CatController : MonoBehaviour
+public class CatController : RealityWarperBehavior
 {
     public float speed;
     public GameObject AltTrigger;
@@ -16,11 +16,18 @@ public class CatController : MonoBehaviour
     private BoxCollider2D AltTriggerBox;
     private int lastLayer;
     private ItemAttach itemAttachPoint;
-    const int REALITY1 = 7;
-    const int REALITY2 = 8;
-    const int MERGED = 9;
+
     Color PINK = new Color(255/255f, 136/255f, 179/255f, 120/255f);
     Color BLUE = new Color(0/255f, 203/255f, 255/255f, 120/255f);
+    AudioSource BlueLoop;
+    AudioSource PinkLoop;
+
+    RealityWarperBehavior[] AllObjects;
+
+    void Awake()
+    {
+        AllObjects = UnityEngine.Object.FindObjectsOfType<RealityWarperBehavior>();
+    }
 
     void Start()
     {
@@ -29,6 +36,7 @@ public class CatController : MonoBehaviour
         myRigidBody = GetComponent<Rigidbody2D>();
         Cat = GameObject.Find("Cat");
         itemAttachPoint = Cat.GetComponentInChildren<ItemAttach>();
+
         Cat.layer = REALITY2;
         SwitchReality();
     }
@@ -47,7 +55,7 @@ public class CatController : MonoBehaviour
 
         if( Input.GetButtonDown("Merge") )
         {
-            MergeReality();
+            MergeRealityForAllObjects();
         }
     }
 
@@ -131,6 +139,8 @@ public class CatController : MonoBehaviour
         itemAttachPoint.CheckAndReleaseItem( currentLayer );
 
         // Lerp between music channels
+        // StartCoroutine( FadeAudioSource.StartFade(BlueLoop, 2, 0) );
+        // StartCoroutine( FadeAudioSource.StartFade(PinkLoop, 2, 1) );
     }
 
     void SetSpriteColorByLayer( int Layer, Color color )
@@ -166,7 +176,7 @@ public class CatController : MonoBehaviour
         }
     }
 
-    void MergeReality()
+    void MergeRealityForAllObjects()
     {
         if( !safeToSwitch || Cat.layer == MERGED)
         {
@@ -177,7 +187,9 @@ public class CatController : MonoBehaviour
         lastLayer = Cat.layer;
         Cat.layer = MERGED;
 
-        SetSpriteColorByLayer( REALITY1, Color.white );
-        SetSpriteColorByLayer( REALITY2, Color.white );
+        foreach( RealityWarperBehavior Object in AllObjects )
+        {
+            Object.MergeReality();
+        }
     }
 }

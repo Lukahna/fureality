@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ItemAttach : MonoBehaviour
+public class ItemAttach : RealityWarperBehavior
 {
     GameObject _AttachableItem;
     GameObject AttachedItem;
