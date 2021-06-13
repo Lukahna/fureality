@@ -920,6 +920,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   thisPauseMenu: {fileID: 0}
+  thisCredits: {fileID: 0}
 --- !u!1 &968580026
 GameObject:
   m_ObjectHideFlags: 0
@@ -1306,7 +1307,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 8f74ce0e539921e4f82346728856f33a, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 045d0f7edb8b9f24681580ae6d374268, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1

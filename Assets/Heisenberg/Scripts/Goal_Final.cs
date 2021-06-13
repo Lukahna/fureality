@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class Goal : MonoBehaviour
+public class Goal_Final : MonoBehaviour
 {
     public string SceneToLoad;
     [SerializeField] private float _sceneDelay = 0.5f;
@@ -25,7 +25,7 @@ public class Goal : MonoBehaviour
     }
 
     IEnumerator NextLevelCo() {
-        yield return new WaitForSeconds(sceneDelay);
+        yield return new WaitForSeconds(_sceneDelay);
         SceneManager.LoadScene(SceneToLoad);
     }
 }
