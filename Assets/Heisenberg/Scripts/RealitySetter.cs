@@ -11,6 +11,7 @@ public class RealitySetter : MonoBehaviour
         {
             child.gameObject.tag = gameObject.tag;
             child.gameObject.layer = gameObject.layer;
+            child.GetComponent<RealityWarperBehavior>().SwitchReality( 7 );
 
             AddDescendantsWithTag(child );
         }
@@ -22,6 +23,7 @@ public class RealitySetter : MonoBehaviour
         {
             child.gameObject.tag = gameObject.tag;
             child.gameObject.layer = gameObject.layer;
+            child.GetComponent<RealityWarperBehavior>().SwitchReality( 7 );
         }
 
         AddDescendantsWithTag(transform);

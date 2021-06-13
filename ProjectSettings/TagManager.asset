@@ -6,6 +6,9 @@ TagManager:
   tags:
   - Reality1
   - Reality2
+  - Warning
+  - BoxSplitWarning
+  - InsideWallWarning
   layers:
   - Default
   - TransparentFX
@@ -17,7 +20,7 @@ TagManager:
   - Reality1
   - Reality2
   - Merged
-  - 
+  - Goal
   - 
   - 
   - 

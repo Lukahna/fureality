@@ -20,6 +20,10 @@ public class CatController : MonoBehaviour
     protected const int REALITY2 = 8;
     protected const int MERGED = 9;
     AudioSource[] AudioSources;
+    GameObject UI_WarningHolder;
+    GameObject UI_InsideWall;
+    GameObject UI_BoxSplitWarning;
+
 
     [HideInInspector]
     public List<RealityWarperBehavior> AllObjects = new List<RealityWarperBehavior>();
@@ -37,6 +41,12 @@ public class CatController : MonoBehaviour
         Cat = GameObject.Find("Cat");
         itemAttachPoint = Cat.GetComponentInChildren<ItemAttach>();
         AudioSources = GetComponents<AudioSource>();
+        UI_WarningHolder = GameObject.FindGameObjectWithTag("Warning");
+        UI_WarningHolder.SetActive( false );
+        UI_InsideWall = GameObject.FindGameObjectWithTag("InsideWallWarning");
+        UI_InsideWall.SetActive( false );
+        UI_BoxSplitWarning = GameObject.FindGameObjectWithTag("BoxSplitWarning");
+        UI_BoxSplitWarning.SetActive( false );
     }
 
     // Update is called once per frame
@@ -95,7 +105,7 @@ public class CatController : MonoBehaviour
     {
         if( !safeToSwitch )
         {
-            // Shake Screen and Make Sound
+            StartCoroutine(ShowWarningsCo());
             return;
         }
 
@@ -131,11 +141,14 @@ public class CatController : MonoBehaviour
 
     void MergeRealityForAllObjects()
     {
-        if( !safeToSwitch || Cat.layer == MERGED)
+        if( !safeToSwitch )
         {
-            // Shake Screen and Make Sound
+            StartCoroutine(ShowWarningsCo());
             return;
         }
+        
+        if( Cat.layer == MERGED )
+            return;
 
         lastLayer = Cat.layer;
         Cat.layer = MERGED;
@@ -171,5 +184,14 @@ public class CatController : MonoBehaviour
             AudioSources[2].volume = 1;
             AudioSources[3].volume = 0;
         }
+    }
+
+    IEnumerator ShowWarningsCo()
+    {
+        UI_WarningHolder.SetActive( true );
+        UI_InsideWall.SetActive( true );
+        yield return new WaitForSeconds(1f);
+        UI_WarningHolder.SetActive( false );
+        UI_InsideWall.SetActive( false );
     }
 }
