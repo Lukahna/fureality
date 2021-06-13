@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 8502735123939386122}
   - component: {fileID: 7287134245169767759}
   - component: {fileID: 4205685204385235099}
-  - component: {fileID: 4297628251603946150}
+  - component: {fileID: 7558455559173017399}
   m_Layer: 0
   m_Name: PushBox
   m_TagString: Untagged
@@ -74,7 +74,7 @@ SpriteRenderer:
   m_SortingLayerID: 1603220759
   m_SortingLayer: 3
   m_SortingOrder: 10
-  m_Sprite: {fileID: 7482667652216324306, guid: 48e93eef0688c4a259cb0eddcd8661f7,
+  m_Sprite: {fileID: 7642980859614939925, guid: 4f872ce0b4473fb4fb0ab6ecb42d66be,
     type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -120,20 +120,20 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0.03388071, y: -0.21296489}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 1}
+    oldSize: {x: 0.9583333, y: 0.9583333}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 0.66119194, y: 0.5740702}
   m_EdgeRadius: 0
---- !u!114 &4297628251603946150
+--- !u!114 &7558455559173017399
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

@@ -30,7 +30,7 @@ public class MenuManager : MonoBehaviour
     public void OpenPauseMenu()
     {
         //When Press Escape, open Pause Menu
-        if (Input.GetKey(KeyCode.Escape) && SceneManager.GetActiveScene().name != "MainMenu")
+        if (Input.GetKey(KeyCode.Escape) && SceneManager.GetActiveScene().name != "MainMenu" && SceneManager.GetActiveScene().name != "EndGame")
         {
             thisPauseMenu.SetActive(true);
         }
