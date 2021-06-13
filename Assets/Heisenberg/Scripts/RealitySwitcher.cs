@@ -22,13 +22,22 @@ public class RealitySwitcher : MonoBehaviour
     {
         if (other.TryGetComponent<Box>(out var comp))
         {
-            other.gameObject.layer.;
-            SwitchTo();
+            //other.gameObject.layer.;
+            //SwitchTo();
         }
     }
 
-    public void SwitchTo()
+    public void SwitchTo(int realityLayerNumber, GameObject pushBox)
     {
+        pushBox.layer = realityLayerNumber;
 
+        if (realityLayerNumber == 1)
+        {
+
+        }
+        else
+        {
+
+        }
     }
 }
