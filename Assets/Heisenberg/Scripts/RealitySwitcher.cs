@@ -12,6 +12,7 @@ public class RealitySwitcher : MonoBehaviour
 
     private const int REALITY1 = 7;
     private const int REALITY2 = 8;
+    private const int MERGED = 9;
 
     private CatController kitty;
 
@@ -63,11 +64,21 @@ public class RealitySwitcher : MonoBehaviour
 
     public void SwitchTo(int realityLayerNumber, GameObject pushBox)
     {
-        if (realityLayerNumber == REALITY1)
+        if (realityLayerNumber == MERGED)
+        {
+            if( pushBox.tag == "Reality2" )
+                pushBox.tag = "Reality1";
+            else
+                pushBox.tag = "Reality2";
+
+            kitty.GetComponentInChildren<ItemAttach>().CheckAndReleaseItem( MERGED );
+        }
+        else if (realityLayerNumber == REALITY1)
         {
             pushBox.layer = REALITY2;
-            pushBox.GetComponent<Box>().originalLayer = REALITY2;
+            pushBox.tag = "Reality2";
             kitty.GetComponentInChildren<ItemAttach>().CheckAndReleaseItem(REALITY2);
+            pushBox.GetComponent<RealityWarperBehavior>().SwitchReality(kitty.gameObject.layer);
             //kitty.SwitchRealityForAllObjects();
             //kitty.gameObject.layer = REALITY1;
             //kitty.GetComponent<Box>().originalLayer = REALITY1;
@@ -75,14 +86,14 @@ public class RealitySwitcher : MonoBehaviour
         else
         {
             pushBox.layer = REALITY1;
-            pushBox.GetComponent<Box>().originalLayer = REALITY1;
+            pushBox.tag = "Reality1";
             kitty.GetComponentInChildren<ItemAttach>().CheckAndReleaseItem(REALITY1);
+            pushBox.GetComponent<RealityWarperBehavior>().SwitchReality(kitty.gameObject.layer);
             //kitty.SwitchRealityForAllObjects();
             //kitty.gameObject.layer = REALITY2;
             //kitty.GetComponent<Box>().originalLayer = REALITY2;
         }
 
-        pushBox.GetComponent<RealityWarperBehavior>().SwitchReality(kitty.gameObject.layer);
 
         float xPos = this.transform.position.x;
         float yPos = this.transform.position.y;

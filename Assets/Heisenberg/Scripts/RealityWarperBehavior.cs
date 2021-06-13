@@ -6,8 +6,6 @@ using UnityEngine.Tilemaps;
 public class RealityWarperBehavior : MonoBehaviour
 {
     // Start is called before the first frame update
-    public int originalLayer;
-
     protected const int REALITY1 = 7;
     protected const int REALITY2 = 8;
     protected const int MERGED = 9;
