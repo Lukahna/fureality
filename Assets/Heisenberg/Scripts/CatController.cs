@@ -21,11 +21,12 @@ public class CatController : MonoBehaviour
     protected const int MERGED = 9;
     AudioSource[] AudioSources;
 
-    RealityWarperBehavior[] AllObjects;
+    [HideInInspector]
+    public List<RealityWarperBehavior> AllObjects = new List<RealityWarperBehavior>();
 
     void Awake()
     {
-        AllObjects = UnityEngine.Object.FindObjectsOfType<RealityWarperBehavior>();
+        AllObjects.AddRange(UnityEngine.Object.FindObjectsOfType<RealityWarperBehavior>() );
     }
 
     void Start()
