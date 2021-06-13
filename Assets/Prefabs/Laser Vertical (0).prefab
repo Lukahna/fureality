@@ -46,7 +46,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c719d6d4fa4264847a6213822d84a664, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  originalLayer: 0
   m_idNumber: 0
   m_laserOnGameObject: {fileID: 7678084590617173012}
   m_laserOffGameObject: {fileID: 7810010401996038101}
@@ -257,7 +256,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5604df49c70ee23419f918757406a14a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  originalLayer: 0
 --- !u!1 &7810010401996038101
 GameObject:
   m_ObjectHideFlags: 0
@@ -355,7 +353,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5604df49c70ee23419f918757406a14a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  originalLayer: 0
 --- !u!1 &8104150212888584949
 GameObject:
   m_ObjectHideFlags: 0

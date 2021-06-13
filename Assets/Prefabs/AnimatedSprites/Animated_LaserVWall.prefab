@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 7918052166525884345}
   - component: {fileID: 547893855342912854}
   - component: {fileID: 8770558544236109561}
+  - component: {fileID: 67081383044134827}
   m_Layer: 0
   m_Name: Animated_LaserVWall
   m_TagString: Untagged
@@ -117,7 +118,32 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5604df49c70ee23419f918757406a14a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  originalLayer: 0
+--- !u!61 &67081383044134827
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2190613866008343471}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.007339716, y: -0.4880966}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1, y: 1}
+    newSize: {x: 0.9583333, y: 0.9583333}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 0.8678837, y: 1.9761932}
+  m_EdgeRadius: 0
 --- !u!1 &2778533180691917853
 GameObject:
   m_ObjectHideFlags: 0
@@ -233,4 +259,3 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5604df49c70ee23419f918757406a14a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  originalLayer: 0
