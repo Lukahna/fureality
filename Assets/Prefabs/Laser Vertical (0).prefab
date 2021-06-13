@@ -44,11 +44,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c719d6d4fa4264847a6213822d84a664, type: 3}
-  m_Name:
-  m_EditorClassIdentifier:
+  m_Name: 
+  m_EditorClassIdentifier: 
+  originalLayer: 0
   m_idNumber: 0
-  m_connectedLaserToggle: {fileID: 0}
-  m_laserOnGameObject: {fileID: 5185546622454217875}
+  m_laserOnGameObject: {fileID: 7678084590617173012}
   m_laserOffGameObject: {fileID: 7810010401996038101}
 --- !u!1 &5185546622454217875
 GameObject:
@@ -67,7 +67,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &5570502781687257767
 Transform:
   m_ObjectHideFlags: 0
@@ -152,7 +152,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.9583333, y: 0.9583333}
+    oldSize: {x: 1, y: 1}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -171,6 +171,7 @@ GameObject:
   m_Component:
   - component: {fileID: 67472965742506631}
   - component: {fileID: 3144742095889675065}
+  - component: {fileID: 968286790911446753}
   m_Layer: 0
   m_Name: OnNotAnimated (1)
   m_TagString: Untagged
@@ -244,6 +245,19 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &968286790911446753
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7239711560606435483}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5604df49c70ee23419f918757406a14a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  originalLayer: 0
 --- !u!1 &7810010401996038101
 GameObject:
   m_ObjectHideFlags: 0
@@ -254,6 +268,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3890178199942550967}
   - component: {fileID: 4740306518008133298}
+  - component: {fileID: 2352895694982016002}
   m_Layer: 0
   m_Name: OffNotAnimated (1)
   m_TagString: Untagged
@@ -328,6 +343,19 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &2352895694982016002
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7810010401996038101}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5604df49c70ee23419f918757406a14a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  originalLayer: 0
 --- !u!1 &8104150212888584949
 GameObject:
   m_ObjectHideFlags: 0
@@ -479,6 +507,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 55afbbe002eea2240b98cff1409f3186, type: 3}
+--- !u!1 &7678084590617173012 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2190613866008343471, guid: 55afbbe002eea2240b98cff1409f3186,
+    type: 3}
+  m_PrefabInstance: {fileID: 8424149082684780475}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &6628530771530662321 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3392850351539301898, guid: 55afbbe002eea2240b98cff1409f3186,
