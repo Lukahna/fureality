@@ -580,7 +580,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 730926991}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.1000004, y: -0.01, z: -0.3910733}
+  m_LocalPosition: {x: 0.6, y: -0.68, z: -0.3910733}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -719,7 +719,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_idNumber: 1
-  m_connectedLaserToggle: {fileID: 1937291021}
   m_laserOnGameObject: {fileID: 0}
   m_laserOffGameObject: {fileID: 0}
 --- !u!50 &903684343
@@ -1247,7 +1246,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_idNumber: 0
-  m_connectedLaserToggle: {fileID: 1241408832}
   m_laserOnGameObject: {fileID: 0}
   m_laserOffGameObject: {fileID: 0}
 --- !u!212 &1578535356

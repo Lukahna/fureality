@@ -9,8 +9,8 @@ public class LaserGate_FSM : MonoBehaviour
     [SerializeField]
     private int m_idNumber;
 
-    [SerializeField]
-    private LaserToggle_FSM m_connectedLaserToggle;
+    //[SerializeField]
+    //private LaserToggle_FSM m_connectedLaserToggle;
 
     //[SerializeField]
     //private Collider2D m_laserCollider;
