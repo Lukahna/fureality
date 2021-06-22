@@ -11,7 +11,7 @@ GMTK 2021 Game Jam, found here:
 
 > Official submission: https://midgear.itch.io/fureality
 
-> GitHub release page: https://github.com/Lukahna/gmtk2021/releases/tag/gmtk2021
+> GitHub release page: https://github.com/Lukahna/fureality/releases/tag/gmtk2021
 
 ## Team
 
@@ -29,7 +29,7 @@ This game was developed by *The Background Cats,* who are:
 
 ## Repository
 
-> https://github.com/Lukahna/gmtk2021.git
+> https://github.com/Lukahna/fureality.git
 
 ## Unity Version
 
