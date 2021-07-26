@@ -19,7 +19,7 @@ public class CatController : MonoBehaviour
     protected const int REALITY1 = 7;
     protected const int REALITY2 = 8;
     protected const int MERGED = 9;
-    AudioSource[] AudioSources;
+    MusicManager musicManager;
     GameObject UI_WarningHolder;
     GameObject UI_InsideWall;
     GameObject UI_BoxSplitWarning;
@@ -40,7 +40,7 @@ public class CatController : MonoBehaviour
         myRigidBody = GetComponent<Rigidbody2D>();
         Cat = GameObject.Find("Cat");
         itemAttachPoint = Cat.GetComponentInChildren<ItemAttach>();
-        AudioSources = GetComponents<AudioSource>();
+        musicManager = GameObject.FindObjectOfType<MusicManager>();
         UI_WarningHolder = GameObject.FindGameObjectWithTag("Warning");
         UI_WarningHolder.SetActive( false );
         UI_InsideWall = GameObject.FindGameObjectWithTag("InsideWallWarning");
@@ -163,64 +163,12 @@ public class CatController : MonoBehaviour
 
     void SwitchMusic()
     {
-        if( Cat.layer == REALITY1 )
-        {
-            AudioSources[0].volume = 1;
-            AudioSources[1].volume = 0;
-            AudioSources[2].volume = 0;
-            AudioSources[3].volume = 0;
-        }
-        else if( Cat.layer == REALITY2 )
-        {
-            AudioSources[0].volume = 0;
-            AudioSources[1].volume = 1;
-            AudioSources[2].volume = 0;
-            AudioSources[3].volume = 0;
-        }
-        else if( Cat.layer == MERGED )
-        {
-            AudioSources[0].volume = 0;
-            AudioSources[1].volume = 0;
-            AudioSources[2].volume = 1;
-            AudioSources[3].volume = 0;
-        }
+        musicManager.SwitchMusic( Cat.layer );
     }
 
-    public IEnumerator SwitchToSplitMusicCo()
+    public void SwitchToSplitMusic()
     {
-        AudioSources[0].volume = 0;
-        AudioSources[1].volume = 0;
-        AudioSources[2].volume = 0;
-        AudioSources[3].volume = 1;
-
-        yield return new WaitForSeconds(3f);
-
-        float currentTime = 0;
-        float duration = 2f;
-        int reality = 0;
-
-        if( Cat.layer == REALITY1 )
-        {
-            reality = 0;
-        }
-        else if( Cat.layer == REALITY2 )
-        {
-            reality = 1;
-        }
-        else
-        {
-            reality = 2;
-        }
-
-        while (currentTime < duration)
-        {
-            currentTime += Time.deltaTime;
-            AudioSources[3].volume = Mathf.Lerp(1, 0, currentTime / duration);
-            AudioSources[reality].volume = Mathf.Lerp(0, 1, currentTime / duration);
-            yield return null;
-        }
-
-        //SwitchMusic();
+        StartCoroutine(musicManager.SwitchToSplitMusicCo( Cat.layer ));
     }
 
     IEnumerator ShowWarningsCo()
@@ -235,20 +183,20 @@ public class CatController : MonoBehaviour
 
     public void PlayPushboxSound()
     {
-        AudioSources[4].Play();
+        musicManager.ASPushbox.Play();
     }
 
     public void PlayDropPushboxSound()
     {
-        AudioSources[6].Play();
+        musicManager.ASDropPushbox.Play();
     }
     public void PlayGoalSound()
     {
-        AudioSources[5].Play();
+        musicManager.ASGoal.Play();
     }
 
     public void PlayWarningSound()
     {
-        AudioSources[7].Play();
+        musicManager.ASWarning.Play();
     }
 }
